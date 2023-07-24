@@ -25,7 +25,7 @@ inittraps(void)
 			sigtraps[i].mess = "Error handler";
 		} else {
 			sigtraps[i].name = sys_signame[i].name;
-			sigtraps[i].mess = sys_siglist[i];
+			sigtraps[i].mess = strsignal(i);
 		}
 	}
 	sigtraps[SIGEXIT_].name = "EXIT";	/* our name for signal 0 */
